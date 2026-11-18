@@ -1,0 +1,5 @@
+target/
+*.db
+libros.json
+.idea/
+*.iml

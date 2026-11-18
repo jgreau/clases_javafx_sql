@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="cl.demo.biblioteca.controller.LibroController">
+    <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
+
+    <Label fx:id="lblAlmacenamiento" style="-fx-font-weight: bold;"/>
+
+    <TableView fx:id="tablaLibros" onMouseClicked="#seleccionarLibro" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colId"     text="ID"     prefWidth="60"/>
+            <TableColumn fx:id="colTitulo" text="Título" prefWidth="300"/>
+            <TableColumn fx:id="colAutor"  text="Autor"  prefWidth="200"/>
+            <TableColumn fx:id="colPrecio" text="Precio" prefWidth="110"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="8">
+        <TextField fx:id="txtTitulo" promptText="Título" HBox.hgrow="ALWAYS"/>
+        <TextField fx:id="txtAutor"  promptText="Autor"  HBox.hgrow="ALWAYS"/>
+        <TextField fx:id="txtPrecio" promptText="Precio" prefWidth="100"/>
+    </HBox>
+
+    <HBox spacing="8">
+        <Button text="Guardar"    onAction="#guardarLibro"/>
+        <Button text="Actualizar" onAction="#actualizarLibro"/>
+        <Button text="Eliminar"   onAction="#eliminarLibro"/>
+        <Button text="Limpiar"    onAction="#limpiarFormulario"/>
+    </HBox>
+</VBox>
